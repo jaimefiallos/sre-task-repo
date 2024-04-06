@@ -13,13 +13,25 @@ spec:
         app: upcommerce-app
     spec:
       containers:
-        - name: upcommerce
-          image: uonyeka/upcommerce:v3
-          ports:
-            - containerPort: 5000
-          imagePullPolicy: Always
-          resources:
-            limits:
-              cpu: "1"
-              memory: "4Gi"
-
+      - name: upcommerce
+        image: 626205068/upcommerce:v3
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "1"
+            memory: "4Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: upcommerce-app-service
+spec:
+  type: NodePort  # Change to LoadBalancer if you're using a cloud provider
+  ports:
+  - port: 5001
+    targetPort: 5000
+    # nodePort: 30001 # Specify if you need a specific node port in the NodePort type. It's optional and automatically allocated if not specified.
+  selector:
+    app: upcommerce-app
