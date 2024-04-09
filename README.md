@@ -1,5 +1,4 @@
 jaime@Jaimes-MBP sre-task-repo % minikube service upcommerce-service -n sre  
-
 |-----------|--------------------|-------------|---------------------------|
 | NAMESPACE |        NAME        | TARGET PORT |            URL            |
 |-----------|--------------------|-------------|---------------------------|
