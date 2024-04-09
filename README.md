@@ -15,9 +15,8 @@ jaime@Jaimes-MBP sre-task-repo % minikube service upcommerce-service -n sre
 
 
 Jaimes-MBP:sre-task-repo jaime$ kubectl --namespace sre port-forward $POD_NAME 9093
-
-Forwarding from 127.0.0.1:9093 -> 9093
-Forwarding from [::1]:9093 -> 9093
+  Forwarding from 127.0.0.1:9093 -> 9093
+  Forwarding from [::1]:9093 -> 9093
 
 Jaimes-MBP:sre-task-repo jaime$ kubectl --namespace sre port-forward $POD_NAME 9090
 
